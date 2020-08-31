@@ -11,9 +11,9 @@
 #include <iostream>
 #include <math.h>
 #include <omp.h>
-#include<time.h>
+#include <time.h>
 
-void decart(const int& n, const int& power, int** sets)
+void decart(const int n, const int& power, int** sets)
 {
 	#pragma omp parallel for schedule(static)
 	for (int i = 0; i < n; i++) 
@@ -65,7 +65,7 @@ int main(int argc, char** argv)
 {
 	const int power = 3;
 	const int n = 100;
-	//Пример того как хрантся множетсва чисел
+	//Пример того как хранятся множетсва чисел
 	//int sets[n][power] = {
 	//	{1,4},
 	//	{2,5},

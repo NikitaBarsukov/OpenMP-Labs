@@ -31,7 +31,7 @@ int main()
 	//private(i, a2) - на протяжении исполнения, потоки будут иметь свою копию переменных i и a2.
 	//shared(A) - массив А будет разделен между потоками (Все потоки будут иметь доступ к одной и той же области памяти).
 	//reduction(+:sum) -  условие гарантирует безопасное выполнение операций редукции, те в конечном счете здесь окажется результат сложения всех потоков. 
-#pragma omp parallel for schedule(static, 25) private(i, subresult)  shared(A) reduction(+:sum)
+	#pragma omp parallel for schedule(static, 25) private(i, subresult)  shared(A) reduction(+:sum)
 	for (i = 1; i < N; i += 2)
 	{
 		subresult = A[i - 1] - A[i];
